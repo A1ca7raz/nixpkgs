@@ -1,6 +1,6 @@
 { lib
 , stdenv
-, fetchFromGitLab
+, fetchurl
 , gi-docgen
 , meson
 , ninja
@@ -27,12 +27,9 @@ stdenv.mkDerivation rec {
   outputs = [ "out" "dev" "devdoc" ];
   outputBin = "devdoc"; # demo app
 
-  src = fetchFromGitLab {
-    domain = "gitlab.gnome.org";
-    owner = "GNOME";
-    repo = "libshumate";
-    rev = version;
-    sha256 = "sha256-c4Mj4UeFsgzSFXjvve9ESuvoL6vQXeTFXFA3Yx3sPHw=";
+  src = fetchurl {
+    url = "mirror://gnome/sources/${pname}/${lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
+    hash = "sha256-T4QTpwfNAPhM7jnKSfWMSPxDbwCOqA1lMqw32v0LqWs=";
   };
 
   depsBuildBuild = [
