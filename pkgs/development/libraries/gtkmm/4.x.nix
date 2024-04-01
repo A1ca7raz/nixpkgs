@@ -24,7 +24,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "mirror://gnome/sources/${pname}/${lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
-    sha256 = "sha256-k1CgREt0TKPcaVhuvRtnB1IJIrbZ9PIyEDzmA6Jx7No=";
+    hash = "sha256-k1CgREt0TKPcaVhuvRtnB1IJIrbZ9PIyEDzmA6Jx7No=";
   };
 
   nativeBuildInputs = [
