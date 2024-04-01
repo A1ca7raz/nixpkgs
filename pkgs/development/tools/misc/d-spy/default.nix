@@ -21,7 +21,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "mirror://gnome/sources/d-spy/${lib.versions.majorMinor version}/d-spy-${version}.tar.xz";
-    sha256 = "sha256-VVgSucZUBVHaWZ7oFHiArTkVuTyH4XV7bRz9kKDgXlM=";
+    hash = "sha256-VVgSucZUBVHaWZ7oFHiArTkVuTyH4XV7bRz9kKDgXlM=";
   };
 
   nativeBuildInputs = [
