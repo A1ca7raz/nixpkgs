@@ -49,7 +49,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "mirror://gnome/sources/gnome-software/${lib.versions.major version}/${pname}-${version}.tar.xz";
-    sha256 = "sha256-EYkwAru1QIKJZoNwe8OZGuVaLzBAgRp2DjqSyWVE+G4=";
+    hash = "sha256-EYkwAru1QIKJZoNwe8OZGuVaLzBAgRp2DjqSyWVE+G4=";
   };
 
   patches = [
