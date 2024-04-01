@@ -1,6 +1,6 @@
 { stdenv
 , lib
-, fetchFromGitLab
+, fetchurl
 , gi-docgen
 , gobject-introspection
 , meson
@@ -12,20 +12,18 @@
 , json-glib
 , librest_1_0
 , libsoup_3
+, gnome
 }:
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "libmsgraph";
-  version = "0.1.0";
+  version = "0.2.1";
 
   outputs = [ "out" "dev" "devdoc" ];
 
-  src = fetchFromGitLab {
-    domain = "gitlab.gnome.org";
-    owner = "GNOME";
-    repo = "msgraph";
-    rev = finalAttrs.version;
-    hash = "sha256-UH8qJxOrJL7gqR1QDQJ+HQ1u3tA3TcSZMluAOSSC40I=";
+  src = fetchurl {
+    url = "mirror://gnome/sources/msgraph/${lib.versions.majorMinor finalAttrs.version}/msgraph-${finalAttrs.version}.tar.xz";
+    hash = "sha256-4OWeqorj4KSOwKbC/tBHCFanCSSOkhK2odA33leS7Ls=";
   };
 
   nativeBuildInputs = [
@@ -57,6 +55,12 @@ stdenv.mkDerivation (finalAttrs: {
     # Cannot be in postInstall, otherwise _multioutDocs hook in preFixup will move right back.
     moveToOutput "share/doc/msgraph-0" "$devdoc"
   '';
+
+  passthru = {
+    updateScript = gnome.updateScript {
+      packageName = "msgraph";
+    };
+  };
 
   meta = with lib; {
     description = "Library to access MS Graph API for Office 365";
