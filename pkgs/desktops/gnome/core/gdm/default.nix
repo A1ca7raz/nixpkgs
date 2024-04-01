@@ -49,7 +49,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/gdm/${lib.versions.major finalAttrs.version}/${finalAttrs.pname}-${finalAttrs.version}.tar.xz";
-    sha256 = "sha256-jWy1IXbspItrvxz+L9rgjZZ3taDyvKYA3uRgTeDdHvw=";
+    hash = "sha256-jWy1IXbspItrvxz+L9rgjZZ3taDyvKYA3uRgTeDdHvw=";
   };
 
   mesonFlags = [
@@ -96,7 +96,7 @@ stdenv.mkDerivation (finalAttrs: {
     # https://gitlab.gnome.org/GNOME/gdm/-/merge_requests/92
     (fetchpatch {
       url = "https://gitlab.gnome.org/GNOME/gdm/-/commit/ccecd9c975d04da80db4cd547b67a1a94fa83292.patch";
-      sha256 = "5hKS9wjjhuSAYwXct5vS0dPbmPRIINJoLC0Zm1naz6Q=";
+      hash = "sha256-5hKS9wjjhuSAYwXct5vS0dPbmPRIINJoLC0Zm1naz6Q=";
       revert = true;
     })
 
