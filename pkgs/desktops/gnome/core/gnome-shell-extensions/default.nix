@@ -17,7 +17,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = "mirror://gnome/sources/gnome-shell-extensions/${lib.versions.major finalAttrs.version}/gnome-shell-extensions-${finalAttrs.version}.tar.xz";
-    sha256 = "sha256-2BOPiM2S35+TIwkUnCNvvdd8G8CVRFA2q36w7NpTwBo=";
+    hash = "sha256-2BOPiM2S35+TIwkUnCNvvdd8G8CVRFA2q36w7NpTwBo=";
   };
 
   patches = [
