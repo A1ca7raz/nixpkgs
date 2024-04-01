@@ -82,7 +82,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   src = fetchurl {
     url = with finalAttrs; "mirror://gnome/sources/gtk/${lib.versions.majorMinor version}/gtk-${version}.tar.xz";
-    sha256 = "sha256-/O+z8TL4zEcRqe+ls1PJrpu17v8CRvp028Ly+Dm54wg=";
+    hash = "sha256-/O+z8TL4zEcRqe+ls1PJrpu17v8CRvp028Ly+Dm54wg=";
   };
 
   depsBuildBuild = [
