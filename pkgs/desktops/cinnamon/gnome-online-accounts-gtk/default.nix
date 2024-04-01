@@ -6,6 +6,7 @@
 , pkg-config
 , wrapGAppsHook4
 , glib
+, glib-networking
 , gnome-online-accounts
 , gtk4
 , libadwaita
@@ -31,6 +32,7 @@ stdenv.mkDerivation (finalAttrs: {
 
   buildInputs = [
     glib
+    glib-networking
     gnome-online-accounts
     gtk4
     libadwaita # for goa-backend
