@@ -17,7 +17,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "mirror://gnome/sources/adwaita-icon-theme/${lib.versions.major version}/${pname}-${version}.tar.xz";
-    sha256 = "sha256-S8tTm9ddZNo4XW+gjLqp3erOtqyOgrhbpsQRF79bpk4=";
+    hash = "sha256-S8tTm9ddZNo4XW+gjLqp3erOtqyOgrhbpsQRF79bpk4=";
   };
 
   nativeBuildInputs = [
