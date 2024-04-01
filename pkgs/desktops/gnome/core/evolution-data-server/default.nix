@@ -56,7 +56,7 @@ stdenv.mkDerivation rec {
 
   src = fetchurl {
     url = "mirror://gnome/sources/evolution-data-server/${lib.versions.majorMinor version}/${pname}-${version}.tar.xz";
-    sha256 = "sha256-pdXhHHoeWFhG7+Jg88HGGng5m9i2I7/XmsHA/+p73gY=";
+    hash = "sha256-pdXhHHoeWFhG7+Jg88HGGng5m9i2I7/XmsHA/+p73gY=";
   };
 
   patches = [
