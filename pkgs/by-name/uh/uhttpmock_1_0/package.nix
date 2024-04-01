@@ -15,7 +15,7 @@
 
 stdenv.mkDerivation (finalAttrs: {
   pname = "uhttpmock";
-  version = "0.9.0";
+  version = "0.10.0";
 
   outputs = [ "out" "dev" "devdoc" ];
 
@@ -24,7 +24,7 @@ stdenv.mkDerivation (finalAttrs: {
     owner = "pwithnall";
     repo = "uhttpmock";
     rev = finalAttrs.version;
-    hash = "sha256-9GfFvH/rAUPIQp9ZdagTnCOE+7/xbcTTZkXTstnFZyU=";
+    hash = "sha256-d3IVlPOLOLzlUDuGOLll8pOK5FMsXI/d2wbwPZ6WI34=";
   };
 
   strictDeps = true;
